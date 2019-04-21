@@ -1,0 +1,285 @@
+/* globals */
+*{
+    box-sizing: border-box;
+  }
+  
+  .hl{
+    color: darkorange  
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  h2, h3{
+    text-align:center;
+    padding-bottom: 1rem 0;
+  }
+  
+  header ~ section{
+    margin-top: 4rem;
+    padding: 1.5rem;
+    overflow: hidden;
+  }
+  
+  html{
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .clearfix{
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .wrapper{
+    max-width: 85%;
+    margin: 0 auto;
+  }
+  
+  /* header */
+  #header{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #222 url("https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") no-repeat center / cover;
+    overflow:hidden;
+  }
+  
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  nav #navbar{
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-bottom: 3px solid #000;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #navbar li{
+    display: inline-block;
+  }
+  
+  #navbar li a{
+    padding: 12px 20px;
+    color: white;
+    display: block;
+    letter-spacing: 2px;
+  }
+  
+  #navbar li a:hover{
+    color: darkorange;
+  }
+  
+  #welcome-section{
+    position: absolute;
+    top: 26px;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  #welcome-section h1, #welcome-section p{
+    font-family: 'Courgette', cursive;
+    color: #eee
+  }
+  
+  #welcome-section h1{
+    font-size: 2.5rem;
+  }
+  
+  #welcome-section h1::after{
+    content: "\f005\f005\f005\f005\f005\f005\f005\f005\f005\f005\f005\f005";
+    font-size: 1rem;
+    display:block;
+    text-align:center;
+    margin-top: 1rem;
+  }
+  
+  #welcome-section p{
+      font-size: 1.5rem;
+  }
+  
+  /* projects */
+  .grid-wrapper{
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: center;  
+    align-content: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  #projects figure{
+    position:relative;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  #projects figure img{
+    max-width: 100%;
+  }
+  
+  .project-tile{
+    text-align: center;
+    color: #333;
+    font-weight: bolder;
+  }
+  
+  .project-overlay{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.75);
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all 300ms ease-in;
+    border-bottom: 3px solid darkorange;
+  }
+  
+  #projects figure:hover .project-overlay{
+    height: 100%;
+    bottom: 0;
+  }
+  
+  div.text{
+    position: absolute;
+    color: #222;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    display:inline;
+    top: 50%;
+    left: 50%;
+    background: #eee;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  /* contacts */
+  #grid-col-2{
+    display: grid;
+    grid-template-areas: 
+      "col1 col2"
+      "col1 col2"
+      "col1 col2";
+     justify-content:center;
+      grid-gap: 3rem 12rem;
+  }
+  
+  #contact{
+    background-color: #444;
+    color: #ddd;
+  }
+  
+  #contact h2, #contact p{
+     color: white;
+  }
+  
+  #contact p{
+    
+  }
+  
+  .col1{
+    grid-area: col1;
+  }
+  
+  .col2{
+    grid-area: col2;
+  }
+  
+  .col2 a{
+    display: inline-block;
+    padding: 1rem;
+    margin: 0 1rem;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    text-align:center;
+    color: darkorange;
+  }
+  
+  .caption{
+    text-align:center;
+    margin-bottom: 3.5rem;
+  }
+  
+  .add-con{
+     font-family: 'Courgette', cursive;
+  }
+  
+  footer{
+    background-color: #222;
+    color: white;
+    padding: 8px;
+    font-family: 'Courgette', cursive;
+  }
+  
+  footer p{
+    text-align:center;
+   
+  }
+  
+  @media screen and (max-width: 600px){
+    .wrapper{
+      max-width: 100%;
+    }
+    #welcome-section h1{
+       font-size: 1.5rem;
+    }
+     #welcome-section p{
+       font-size: .9rem;
+    }
+    .grid-wrapper{
+      grid-gap: 0;
+      grid-template-columns: 1fr;
+    }
+    #grid-col-2{
+      display: grid;
+      grid-template-areas: 
+        "col1"
+        "col2";
+       justify-content:center;
+       grid-gap: 3rem 12rem;
+    }
+    
+    #navbar li a{
+      padding: 10px 12px;
+    }
+    
+    p, a{
+      font-size: .8rem;
+    }
+    
+    .col2 a{
+       padding: .7rem;
+    }
+    
+    h2{
+      font-size: 1.3rem;
+    }
+  }
+  
+  
